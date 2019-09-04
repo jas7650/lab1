@@ -72,7 +72,6 @@ def expand_iterate(cmd_str):
             out_str += " "
 
         i += 1
-    print (out_str)
     return out_str
 
 
@@ -85,7 +84,7 @@ def expand_polygon(cmd_str):
             num_sides = int(cmd_list[i][1:])
             i += 1
             side_length = int(cmd_list[i])
-            out_str += "I%s F%s L%s @ " % (side_length, side_length, 360 / num_sides)
+            out_str += "I%s F%s L%s @ " % (num_sides, side_length, round(360 / num_sides))
         else:
             out_str += cmd_list[i] + " "
         i += 1
